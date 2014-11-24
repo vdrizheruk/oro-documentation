@@ -1,0 +1,29 @@
+<project name="oro-documentation-build" default="run"  basedir=".">
+    <description>
+	test build documentation from git@github.com:orocrm/documentation.git ${src}
+    </description>
+    <property name="src" location="src" />
+
+    <target name="run" depends="init, github-clone, make-json-documentation, clean" />
+
+    <target name="init">
+	<tstamp/>
+	<mkdir dir="${src}" />
+    </target>
+
+    <target name="github-clone">
+	<exec executable="git">
+	    <arg line=" clone --recursive git@github.com:orocrm/documentation.git ${src}" />
+	</exec>
+    </target>
+
+    <target name="make-json-documentation">
+	<exec executable="make">
+	    <arg line=" --directory=${src} json" />
+	</exec>
+    </target>
+
+    <target name="clean">
+	<delete dir="${src}" />
+    </target>
+</project>
