@@ -4,7 +4,7 @@
     </description>
     <property name="src" location="src" />
 
-    <target name="run" depends="init, github-clone, make-json-documentation, make-html-documentation, clean" />
+    <target name="run" depends="init, github-clone, make-json-documentation, make-html-documentation" />
 
     <target name="init">
 	<tstamp/>
