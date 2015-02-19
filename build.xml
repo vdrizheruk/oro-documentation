@@ -13,7 +13,7 @@
 
     <target name="github-clone">
 	<exec executable="git">
-	    <arg line=" clone --recursive git@github.com:orocrm/documentation.git ${src}" />
+	    <arg line=" clone --recursive git@github.com:vdrizheruk/documentation.git ${src}" />
 	</exec>
     </target>
 
