@@ -4,7 +4,7 @@
     </description>
     <property name="src" location="src" />
 
-    <target name="run" depends="init, github-clone, make-json-documentation, clean" />
+    <target name="run" depends="init, github-clone, make-json-documentation, make-html-documentation, clean" />
 
     <target name="init">
 	<tstamp/>
@@ -20,6 +20,12 @@
     <target name="make-json-documentation">
 	<exec executable="make">
 	    <arg line=" --directory=${src} json" />
+	</exec>
+    </target>
+    
+    <target name="make-html-documentation">
+	<exec executable="make">
+	    <arg line=" --directory=${src} html" />
 	</exec>
     </target>
 
